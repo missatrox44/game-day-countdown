@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Play, X } from "lucide-react";
-import posterImg from "@/assets/overhead.jpg";
+import posterImg from "@/assets/_HDW4835.jpg";
 
 // TODO: replace with Alexa's actual video URL (YouTube embed or direct mp4)
 const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0";

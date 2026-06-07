@@ -1,18 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
-import { ArrowRight, Heart, Shirt, DollarSign } from "lucide-react";
+import { ArrowRight, Heart, Shirt, DollarSign, Instagram } from "lucide-react";
 import { CountdownScoreboard } from "@/components/CountdownScoreboard";
 import { VideoLightbox } from "@/components/VideoLightbox";
-import heroImg from "@/assets/alexa.jpg";
-import overhead from "@/assets/overhead.jpg";
-import squat from "@/assets/squat.jpg";
-import wallBall from "@/assets/wall-ball.jpg";
-import collage4 from "@/assets/collage-4.jpg";
-import collage5 from "@/assets/collage-5.jpg";
+import heroImg from "@/assets/IMG_3081.JPG";
+import thruster from "@/assets/_HDW4835.jpg";
+import gamesOverhead from "@/assets/IMG_3382.JPG";
+import wallBall from "@/assets/_HDW3569.jpg";
+import jump from "@/assets/IMG_2950.jpg";
+import ropeClimb from "@/assets/IMG_3490.JPG";
+import frontRack from "@/assets/_HDW4588.jpg";
+import bench from "@/assets/IMG_3579.jpg";
+import boxJump from "@/assets/_HDW3561.jpg";
+import pullUps from "@/assets/z21.JPG";
+import kettlebell from "@/assets/z6.JPG";
+import bike from "@/assets/IMG_2259.JPG";
+import namePlate from "@/assets/IMG_3286.JPG";
+import zelleQr from "@/assets/alexa-zelle.png";
 
 const CASHAPP_URL = "https://cash.app/$alexaserret";
+const CASHAPP_HANDLE = "$alexaserret";
 const VENMO_URL = "https://venmo.com/u/ALEXA-SERRET";
-const ZELLE_HANDLE = "@ALEXA_SERRET"; // confirm with Alexa
+const VENMO_HANDLE = "@Alexa-Serret";
 const TSHIRT_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSfQ5mayuU_ztpk4w0GBE2b8U-h7mWDeNOy3oU4Ak4M0T03ljw/viewform";
 const LOCATION = "San José, CA";
@@ -142,8 +151,7 @@ function Hero() {
               className="mt-7 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed opacity-0 animate-fade-up"
               style={{ animationDelay: "700ms" }}
             >
-              After years of grit, setbacks, and PRs nobody saw coming, Alexa earned her
-              spot on the floor. Help send her there — and grab the shirt while you're at it.
+              Most people fight to get there once. Alexa's done it twice! Help send her back to the floor and grab a shirt while you're at it.
             </p>
 
             <div
@@ -266,15 +274,24 @@ function Collage() {
         </Reveal>
 
         <div className="grid grid-cols-6 grid-rows-2 gap-3 sm:gap-4 h-[520px] sm:h-[640px] lg:h-[720px]">
-          <CollageTile src={overhead} alt="Overhead lift" className="col-span-3 row-span-2" delay={0} />
-          <CollageTile src={squat} alt="Squat" className="col-span-3 row-span-1" delay={80} />
+          <CollageTile src={thruster} alt="Thruster at full lockout" className="col-span-3 row-span-2" delay={0} />
+          <CollageTile src={gamesOverhead} alt="Overhead lift at the CrossFit Games floor" className="col-span-3 row-span-1" delay={80} />
           <CollageTile src={wallBall} alt="Wall ball" className="col-span-3 sm:col-span-2 row-span-1" delay={160} />
-          <CollageTile src={collage5} alt="Competition floor" className="col-span-1 row-span-1 hidden sm:block" delay={240} />
+          <CollageTile src={jump} alt="Mid-jump at the qualifier" className="col-span-1 row-span-1 hidden sm:block" delay={240} />
+        </div>
+
+        <div className="mt-3 sm:mt-4 grid grid-cols-6 grid-rows-2 gap-3 sm:gap-4 h-[520px] sm:h-[640px] lg:h-[720px]">
+          <CollageTile src={ropeClimb} alt="Rope climb in competition" className="col-span-3 row-span-1" delay={0} />
+          <CollageTile src={frontRack} alt="Front rack hold" className="col-span-3 row-span-2" delay={80} />
+          <CollageTile src={bench} alt="Resting under the bar" className="col-span-3 sm:col-span-2 row-span-1" delay={160} />
+          <CollageTile src={boxJump} alt="Box jump" className="col-span-1 row-span-1 hidden sm:block" delay={240} />
         </div>
 
         <div className="mt-3 sm:mt-4 grid grid-cols-6 gap-3 sm:gap-4 h-[200px] sm:h-[280px]">
-          <CollageTile src={collage4} alt="Between rounds" className="col-span-2 row-span-1" delay={120} />
-          <CollageTile src={collage5} alt="Scoreboard glow" className="col-span-4 row-span-1" delay={200} />
+          <CollageTile src={namePlate} alt="Alexa Serret's name on the competition lane" className="col-span-3 row-span-1" delay={0} />
+          <CollageTile src={pullUps} alt="Pull-ups" className="col-span-2 sm:col-span-1 row-span-1" delay={120} />
+          <CollageTile src={kettlebell} alt="Catching her breath over the kettlebell" className="col-span-1 row-span-1" delay={200} />
+          <CollageTile src={bike} alt="Assault bike intervals" className="col-span-1 row-span-1 hidden sm:block" delay={280} />
         </div>
       </div>
     </section>
@@ -356,7 +373,10 @@ function SupportCTA() {
               cta="Cash App"
               href={CASHAPP_URL}
               ctaSecondary={{ label: "Venmo", href: VENMO_URL }}
-              note={`Zelle: ${ZELLE_HANDLE}`}
+              handles={[
+                { label: "Cash App", value: CASHAPP_HANDLE, href: CASHAPP_URL },
+                { label: "Venmo", value: VENMO_HANDLE, href: VENMO_URL },
+              ]}
               icon={<DollarSign className="h-5 w-5" />}
               primary
             />
@@ -381,6 +401,27 @@ function SupportCTA() {
             />
           </Reveal>
         </div>
+
+        <Reveal delay={100}>
+          <div className="mt-4 sm:mt-5 rounded-3xl border border-border bg-card p-7 sm:p-8 flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
+            <img
+              src={zelleQr}
+              alt="Zelle QR code to send money to Alexa"
+              className="h-40 w-40 shrink-0 rounded-2xl bg-white object-contain p-2"
+            />
+            <div className="text-center sm:text-left">
+              <p className="text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
+                Prefer Zelle?
+              </p>
+              <h3 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight">
+                Scan to send
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Open your bank app, scan this code, and it goes straight to Alexa.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -394,7 +435,7 @@ function SupportCard({
   ctaSecondary,
   href,
   items,
-  note,
+  handles,
   icon,
   primary = false,
 }: {
@@ -405,7 +446,7 @@ function SupportCard({
   ctaSecondary?: { label: string; href: string };
   href?: string;
   items?: string[];
-  note?: string;
+  handles?: { label: string; value: string; href: string }[];
   icon: ReactNode;
   primary?: boolean;
 }) {
@@ -481,10 +522,22 @@ function SupportCard({
         </div>
       )}
 
-      {note && (
-        <p className={`mt-4 text-sm ${primary ? "text-background/70" : "text-muted-foreground"}`}>
-          {note}
-        </p>
+      {handles && (
+        <dl className={`mt-5 space-y-1.5 text-sm ${primary ? "text-background/85" : "text-foreground"}`}>
+          {handles.map((handle) => (
+            <div key={handle.label} className="flex items-center justify-between gap-3">
+              <dt className={primary ? "text-background/55" : "text-muted-foreground"}>{handle.label}</dt>
+              <a
+                href={handle.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono link-underline"
+              >
+                {handle.value}
+              </a>
+            </div>
+          ))}
+        </dl>
       )}
     </div>
   );
@@ -497,12 +550,19 @@ function SiteFooter() {
         <div>
           <p className="font-display text-xl font-semibold">Alexa Serret<span className="text-primary">.</span></p>
           <p className="text-sm text-muted-foreground mt-1">
-            2026 Adaptive CrossFit Games · {LOCATION} · July 24
+            2026 Adaptive CrossFit Games · {LOCATION}
           </p>
         </div>
-        {/* <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-          Built with love by her people.
-        </p> */}
+        <a
+          href="https://www.instagram.com/alexa_serret/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Alexa on Instagram"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
+        >
+          <Instagram className="h-5 w-5" />
+          @alexa_serret
+        </a>
       </div>
     </footer>
   );
