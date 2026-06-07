@@ -17,7 +17,7 @@ function Digit({ value, label }: { value: number; label: string }) {
   const padded = value.toString().padStart(2, "0");
   return (
     <div className="flex flex-col items-center">
-      <div className="relative overflow-hidden font-display text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums leading-none tracking-tight text-foreground">
+      <div className="relative overflow-hidden font-mono text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums leading-none tracking-tight text-foreground">
         <span key={padded} className="block animate-flip-in">
           {padded}
         </span>
@@ -48,7 +48,7 @@ export function CountdownScoreboard({ location }: { location: string }) {
             Live Countdown
           </span>
         </div>
-        <span className="text-[10px] uppercase tracking-[0.22em] text-primary font-medium">
+        <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-primary font-medium">
           July 24, 2026
         </span>
       </div>
