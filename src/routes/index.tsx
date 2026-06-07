@@ -17,6 +17,7 @@ import kettlebell from "@/assets/z6.JPG";
 import bike from "@/assets/IMG_2259.JPG";
 import namePlate from "@/assets/IMG_3286.JPG";
 import zelleQr from "@/assets/alexa-zelle.png";
+import tshirts from "@/assets/alexa-tshirts-2026.jpg";
 
 const CASHAPP_URL = "https://cash.app/$alexaserret";
 const CASHAPP_HANDLE = "$alexaserret";
@@ -415,6 +416,18 @@ function SupportCTA() {
               href={TSHIRT_FORM_URL}
               icon={<Shirt className="h-5 w-5" />}
             />
+          </Reveal>
+        </div>
+
+        <div className="mt-14 sm:mt-5 rounded-3xl flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
+          <Reveal>
+              <img
+                src={tshirts}
+                alt="T-shirt design of 2026"
+                className="h-full w-full object-cover animate-ken-burns"
+                width={1119}
+                height={573}
+              />
           </Reveal>
         </div>
 
