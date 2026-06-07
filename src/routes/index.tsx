@@ -336,10 +336,7 @@ function Story() {
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Alexa has been chasing this floor for years — through injury, doubt, and
-            the kind of early-morning sessions nobody posts about. In July she steps
-            onto the biggest stage in adaptive CrossFit. Whatever you can give —
-            money, a shirt order, a share — gets her there.
+            Alexa has been putting in the work for years. Late evenings, high standards, and never once backing down from a challenge. This July she steps onto the biggest stage in adaptive CrossFit. All her hard work is paying off! Help her get there with a share, a shirt order or a donation.
           </p>
         </Reveal>
       </div>
@@ -452,23 +449,20 @@ function SupportCard({
 }) {
   return (
     <div
-      className={`group relative h-full rounded-3xl p-7 sm:p-8 border transition-all duration-300 hover:-translate-y-1 ${
-        primary
+      className={`group relative h-full rounded-3xl p-7 sm:p-8 border transition-all duration-300 hover:-translate-y-1 ${primary
           ? "bg-foreground text-background border-foreground shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)]"
           : "bg-card text-foreground border-border hover:border-foreground/30"
-      }`}
+        }`}
     >
       <div
-        className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${
-          primary ? "bg-background/10 text-background" : "bg-primary/10 text-primary"
-        }`}
+        className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${primary ? "bg-background/10 text-background" : "bg-primary/10 text-primary"
+          }`}
       >
         {icon}
       </div>
       <p
-        className={`mt-6 text-[10px] uppercase tracking-[0.24em] ${
-          primary ? "text-background/60" : "text-muted-foreground"
-        }`}
+        className={`mt-6 text-[10px] uppercase tracking-[0.24em] ${primary ? "text-background/60" : "text-muted-foreground"
+          }`}
       >
         {eyebrow}
       </p>
@@ -496,11 +490,10 @@ function SupportCard({
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${
-              primary
+            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${primary
                 ? "bg-background text-foreground hover:bg-background/90"
                 : "bg-foreground text-background hover:bg-foreground/90"
-            }`}
+              }`}
           >
             {cta}
             <ArrowRight className="h-4 w-4" />
@@ -510,11 +503,10 @@ function SupportCard({
               href={ctaSecondary.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${
-                primary
+              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${primary
                   ? "text-background border border-background/30 hover:border-background/60"
                   : "text-foreground border border-border hover:border-foreground/40"
-              }`}
+                }`}
             >
               {ctaSecondary.label}
             </a>

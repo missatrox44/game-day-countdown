@@ -27,6 +27,9 @@ pnpm-workspace.yaml
 # Vercel build output
 .vercel/
 
+# Playwright MCP screenshot output
+.playwright-mcp/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
