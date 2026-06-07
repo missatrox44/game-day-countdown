@@ -31,7 +31,7 @@ There are no tests.
 - **Routing**: file-based in `src/routes/` — see `src/routes/README.md` for conventions (TanStack, *not* Next.js: no `src/pages/`, no `app/layout.tsx`). `src/routeTree.gen.ts` is auto-generated; never edit it. `src/routes/__root.tsx` is the app shell (head tags, Google Fonts links, error/404 boundaries) and must keep its `<Outlet />`.
 - **Vite config**: `vite.config.ts` wraps `@lovable.dev/vite-tanstack-config`, which already bundles tanstackStart, viteReact, tailwindcss, tsConfigPaths, nitro, etc. Do NOT add those plugins manually — duplicates break the app. Extra config goes through `defineConfig({ vite: { ... } })`.
 - **SSR entry**: `src/server.ts` wraps TanStack's server entry to catch errors h3 would otherwise swallow, rendering `src/lib/error-page.ts` instead. Wired via `tanstackStart.server.entry` in vite.config.
-- **Server logic**: use `createServerFn` (example in `src/lib/api/example.functions.ts`), not separate API routes. Server-only code goes in `.server.ts` files (e.g. `src/lib/config.server.ts`). Target is Cloudflare Workers: read `process.env` inside functions/handlers, never at module scope. Public config uses `import.meta.env.VITE_*`.
+- **Server logic**: use `createServerFn`, not separate API routes. Server-only code goes in `.server.ts` files. Target is Cloudflare Workers: read `process.env` inside functions/handlers, never at module scope. Public config uses `import.meta.env.VITE_*`.
 
 ## Styling
 
@@ -40,5 +40,5 @@ Tailwind v4 — there is **no `tailwind.config`**; all theming lives in `src/sty
 - Design tokens are oklch CSS variables in `:root` (light) and `.dark`, mapped to Tailwind via the `@theme inline` block. Change the color scheme by editing these variables, not by hardcoding colors in components.
 - Fonts: Big Shoulders Display/Stencil (display/stencil), Hanken Grotesk (body), Geist Mono (numerals) — loaded via Google Fonts `<link>` in `__root.tsx`, exposed as `font-display`, `font-stencil`, `font-sans`, `font-mono`.
 - Custom animation utilities (`animate-word-rise`, `animate-fade-up`, `animate-ken-burns`, `animate-flip-in`, `animate-marquee`) and `link-underline` are defined with `@utility` in `styles.css`. Scroll-triggered reveals use the `Reveal` IntersectionObserver wrapper in `index.tsx`.
-- Images live in `src/assets/` and are imported as modules (`import heroImg from "@/assets/hero.jpg"`), which lets Vite hash/optimize them. Don't use `public/` for page images.
-- shadcn/ui components are in `src/components/ui/` (most are unused boilerplate); bespoke components (`CountdownScoreboard`, `VideoLightbox`) are in `src/components/`.
+- Images live in `src/assets/` and are imported as modules (`import heroImg from "@/assets/alexa.jpg"`), which lets Vite hash/optimize them. Don't use `public/` for page images.
+- The page's bespoke components (`CountdownScoreboard`, `VideoLightbox`) live in `src/components/`. The unused shadcn/ui boilerplate was removed; `components.json` is still configured, so add components on demand with the shadcn CLI (which will recreate `src/components/ui/` and `src/lib/utils.ts`).
