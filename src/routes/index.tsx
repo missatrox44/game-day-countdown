@@ -419,16 +419,6 @@ function SupportCTA() {
           </Reveal>
         </div>
 
-        <div className="mt-14 sm:mt-5 rounded-3xl flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
-          <Reveal>
-              <img
-                src={tshirts}
-                alt="T-shirt design of 2026"
-                className="w-full object-cover rounded-3xl"
-              />
-          </Reveal>
-        </div>
-
         <Reveal delay={100}>
           <div className="mt-4 sm:mt-5 rounded-3xl border border-border bg-card p-7 sm:p-8 flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
             <img
@@ -449,6 +439,17 @@ function SupportCTA() {
             </div>
           </div>
         </Reveal>
+
+        <div className="mt-14 sm:mt-5 rounded-3xl flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
+          <Reveal delay={100}>
+              <img
+                src={tshirts}
+                alt="T-shirt design of 2026"
+                className="w-full object-cover rounded-3xl"
+              />
+          </Reveal>
+        </div>
+        
       </div>
     </section>
   );
