@@ -3,7 +3,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { ArrowRight, Heart, Shirt, DollarSign } from "lucide-react";
 import { CountdownScoreboard } from "@/components/CountdownScoreboard";
 import { VideoLightbox } from "@/components/VideoLightbox";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/alexa.jpg";
 import collage1 from "@/assets/collage-1.jpg";
 import collage2 from "@/assets/collage-2.jpg";
 import collage3 from "@/assets/collage-3.jpg";
@@ -15,7 +15,7 @@ const DONATE_URL = "#";
 const CASHAPP_URL = "#"; // e.g. https://cash.app/$alexa
 const VENMO_URL = "#"; // e.g. https://venmo.com/u/alexa
 const TSHIRT_FORM_URL = "#"; // Google Form URL
-const LOCATION = "Madison, WI";
+const LOCATION = "San José, CA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -146,7 +146,7 @@ function Hero() {
             >
               <a
                 href="#support"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3.5 text-sm font-medium shadow-[0_10px_30px_-10px_oklch(0.52_0.19_28/.6)] hover:shadow-[0_18px_40px_-12px_oklch(0.52_0.19_28/.7)] hover:-translate-y-0.5 transition-all"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3.5 text-sm font-medium shadow-[0_10px_30px_-10px_oklch(0.476_0.192_348/.6)] hover:shadow-[0_18px_40px_-12px_oklch(0.476_0.192_348/.7)] hover:-translate-y-0.5 transition-all"
               >
                 Donate
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -194,7 +194,7 @@ function Hero() {
 }
 
 function MarqueeBar() {
-  const items = ["Adaptive Division", "Class of 2026", "Madison, WI", "July 24–27", "#TeamAlexa"];
+  const items = ["Adaptive Division", "Class of 2026", "San José, CA", "July 24–27", "#TeamAlexa"];
   const row = [...items, ...items, ...items];
   return (
     <div className="mt-24 sm:mt-28 lg:mt-20 border-y border-border/60 bg-surface overflow-hidden">
@@ -452,14 +452,14 @@ function SiteFooter() {
     <footer className="border-t border-border/60 bg-surface">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div>
-          <p className="font-display text-xl font-semibold">Alexa<span className="text-primary">.</span></p>
+          <p className="font-display text-xl font-semibold">Alexa Serret<span className="text-primary">.</span></p>
           <p className="text-sm text-muted-foreground mt-1">
             2026 Adaptive CrossFit Games · {LOCATION} · July 24
           </p>
         </div>
-        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+        {/* <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
           Built with love by her people.
-        </p>
+        </p> */}
       </div>
     </footer>
   );

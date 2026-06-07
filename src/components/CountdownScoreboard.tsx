@@ -13,8 +13,8 @@ function calc(): { d: number; h: number; m: number; s: number; done: boolean } {
   return { d, h, m, s, done: false };
 }
 
-function Digit({ value, label }: { value: number; label: string }) {
-  const padded = value.toString().padStart(2, "0");
+function Digit({ value, label }: { value: number | null; label: string }) {
+  const padded = value === null ? "--" : value.toString().padStart(2, "0");
   return (
     <div className="flex flex-col items-center">
       <div className="relative overflow-hidden font-mono text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums leading-none tracking-tight text-foreground">
@@ -30,8 +30,13 @@ function Digit({ value, label }: { value: number; label: string }) {
 }
 
 export function CountdownScoreboard({ location }: { location: string }) {
-  const [t, setT] = useState(calc);
+  // Start null so SSR and the first client render emit a stable placeholder
+  // ("--"); computing the live time during hydration would mismatch the server
+  // HTML (the clock has ticked since the request). The real countdown starts
+  // after mount.
+  const [t, setT] = useState<ReturnType<typeof calc> | null>(null);
   useEffect(() => {
+    setT(calc());
     const id = setInterval(() => setT(calc()), 1000);
     return () => clearInterval(id);
   }, []);
@@ -53,16 +58,16 @@ export function CountdownScoreboard({ location }: { location: string }) {
         </span>
       </div>
 
-      {t.done ? (
+      {t?.done ? (
         <p className="font-display text-2xl text-foreground py-4 text-center">
           It's Games Day.
         </p>
       ) : (
         <div className="grid grid-cols-4 gap-2 sm:gap-3">
-          <Digit value={t.d} label="Days" />
-          <Digit value={t.h} label="Hrs" />
-          <Digit value={t.m} label="Min" />
-          <Digit value={t.s} label="Sec" />
+          <Digit value={t?.d ?? null} label="Days" />
+          <Digit value={t?.h ?? null} label="Hrs" />
+          <Digit value={t?.m ?? null} label="Min" />
+          <Digit value={t?.s ?? null} label="Sec" />
         </div>
       )}
 
