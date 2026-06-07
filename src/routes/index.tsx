@@ -4,17 +4,17 @@ import { ArrowRight, Heart, Shirt, DollarSign } from "lucide-react";
 import { CountdownScoreboard } from "@/components/CountdownScoreboard";
 import { VideoLightbox } from "@/components/VideoLightbox";
 import heroImg from "@/assets/alexa.jpg";
-import collage1 from "@/assets/collage-1.jpg";
-import collage2 from "@/assets/collage-2.jpg";
-import collage3 from "@/assets/collage-3.jpg";
+import overhead from "@/assets/overhead.jpg";
+import squat from "@/assets/squat.jpg";
+import wallBall from "@/assets/wall-ball.jpg";
 import collage4 from "@/assets/collage-4.jpg";
 import collage5 from "@/assets/collage-5.jpg";
 
-// TODO: replace placeholders before launch
-const DONATE_URL = "#";
-const CASHAPP_URL = "#"; // e.g. https://cash.app/$alexa
-const VENMO_URL = "#"; // e.g. https://venmo.com/u/alexa
-const TSHIRT_FORM_URL = "#"; // Google Form URL
+const CASHAPP_URL = "https://cash.app/$alexaserret";
+const VENMO_URL = "https://venmo.com/u/ALEXA-SERRET";
+const ZELLE_HANDLE = "@ALEXA_SERRET"; // confirm with Alexa
+const TSHIRT_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfQ5mayuU_ztpk4w0GBE2b8U-h7mWDeNOy3oU4Ak4M0T03ljw/viewform";
 const LOCATION = "San José, CA";
 
 export const Route = createFileRoute("/")({
@@ -24,13 +24,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Alexa is going to the 2026 Adaptive CrossFit Games. Donate, grab a t-shirt, and follow her road to Madison.",
+          "Alexa is going to the 2026 Adaptive CrossFit Games. Donate, grab a t-shirt, and follow her road to San José.",
       },
       { property: "og:title", content: "Alexa — Adaptive CrossFit Games 2026" },
       {
         property: "og:description",
         content:
-          "Alexa is going to the 2026 Adaptive CrossFit Games. Donate, grab a t-shirt, and follow her road to Madison.",
+          "Alexa is going to the 2026 Adaptive CrossFit Games. Donate, grab a t-shirt, and follow her road to San José.",
       },
       { property: "og:image", content: heroImg },
       { property: "og:type", content: "website" },
@@ -88,7 +88,7 @@ function SiteHeader() {
     <header className="absolute top-0 inset-x-0 z-30">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-6 flex items-center justify-between">
         <a href="#top" className="font-display text-lg font-semibold tracking-tight">
-          Alexa<span className="text-primary">.</span>
+          Alexa Serret<span className="text-primary">.</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a>
@@ -119,6 +119,12 @@ function Hero() {
               style={{ animationDelay: "80ms" }}
             >
               Road to the 2026 Adaptive CrossFit Games
+            </p>
+            <p
+              className="mt-2 text-xs sm:text-sm text-muted-foreground opacity-0 animate-fade-up"
+              style={{ animationDelay: "120ms" }}
+            >
+              Moderate Division · Neuromuscular Impairment (Female)
             </p>
             <h1 className="mt-6 font-stencil font-black uppercase tracking-[-0.005em] text-foreground leading-[0.9] text-[3.5rem] sm:text-8xl lg:text-[8.5rem]">
               {words.map((w, i) => (
@@ -194,7 +200,13 @@ function Hero() {
 }
 
 function MarqueeBar() {
-  const items = ["Adaptive Division", "Class of 2026", "San José, CA", "July 24–27", "#TeamAlexa"];
+  const items = [
+    "Adaptive CrossFit Games 2026",
+    "Moderate — Neuromuscular Impairment",
+    "San José, CA",
+    "One goal · One team · One mission",
+    "#TeamAlexa",
+  ];
   const row = [...items, ...items, ...items];
   return (
     <div className="mt-24 sm:mt-28 lg:mt-20 border-y border-border/60 bg-surface overflow-hidden">
@@ -254,9 +266,9 @@ function Collage() {
         </Reveal>
 
         <div className="grid grid-cols-6 grid-rows-2 gap-3 sm:gap-4 h-[520px] sm:h-[640px] lg:h-[720px]">
-          <CollageTile src={collage1} alt="Overhead lift" className="col-span-3 row-span-2" delay={0} />
-          <CollageTile src={collage2} alt="Pull-ups at competition" className="col-span-3 row-span-1" delay={80} />
-          <CollageTile src={collage3} alt="Chalked hands on the bar" className="col-span-2 row-span-1" delay={160} />
+          <CollageTile src={overhead} alt="Overhead lift" className="col-span-3 row-span-2" delay={0} />
+          <CollageTile src={squat} alt="Squat" className="col-span-3 row-span-1" delay={80} />
+          <CollageTile src={wallBall} alt="Wall ball" className="col-span-3 sm:col-span-2 row-span-1" delay={160} />
           <CollageTile src={collage5} alt="Competition floor" className="col-span-1 row-span-1 hidden sm:block" delay={240} />
         </div>
 
@@ -326,40 +338,44 @@ function SupportCTA() {
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">Send her there</p>
             <h2 className="mt-4 font-display text-4xl sm:text-6xl font-semibold tracking-tight">
-              Three ways to back Alexa.
+              Back Alexa.
             </h2>
+            <p className="mt-5 mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Help us represent. Help us inspire. Help us compete at the highest level. One goal,
+              one team, one mission.
+            </p>
           </div>
         </Reveal>
 
         <div className="mt-14 grid md:grid-cols-3 gap-4 sm:gap-5">
           <Reveal delay={0}>
             <SupportCard
-              eyebrow="Primary"
-              title="Donate"
-              body="One-click contribution. Goes straight to travel, coaching, and competition costs."
-              cta="Give now"
-              href={DONATE_URL}
-              icon={<Heart className="h-5 w-5" />}
+              eyebrow="Quick send"
+              title="Send it directly"
+              body="Use whichever app you already have open — it goes straight to Alexa."
+              cta="Cash App"
+              href={CASHAPP_URL}
+              ctaSecondary={{ label: "Venmo", href: VENMO_URL }}
+              note={`Zelle: ${ZELLE_HANDLE}`}
+              icon={<DollarSign className="h-5 w-5" />}
               primary
             />
           </Reveal>
           <Reveal delay={100}>
             <SupportCard
-              eyebrow="Quick send"
-              title="Cash App / Venmo"
-              body="Prefer to send it directly? Use whichever app you already have open."
-              cta="Open Cash App"
-              ctaSecondary={{ label: "Open Venmo", href: VENMO_URL }}
-              href={CASHAPP_URL}
-              icon={<DollarSign className="h-5 w-5" />}
+              eyebrow="Any support makes an impact"
+              title="Where it goes"
+              body="Funds go toward:"
+              items={["Travel", "Lodging", "Competition fees", "Nutrition & recovery"]}
+              icon={<Heart className="h-5 w-5" />}
             />
           </Reveal>
           <Reveal delay={200}>
             <SupportCard
               eyebrow="Wear it"
               title="Grab a t-shirt"
-              body="Limited run. Reserve yours through the Google form and pick a size."
-              cta="Sign up"
+              body="Limited run. Reserve yours through the form and pick a color and size."
+              cta="Order"
               href={TSHIRT_FORM_URL}
               icon={<Shirt className="h-5 w-5" />}
             />
@@ -377,15 +393,19 @@ function SupportCard({
   cta,
   ctaSecondary,
   href,
+  items,
+  note,
   icon,
   primary = false,
 }: {
   eyebrow: string;
   title: string;
   body: string;
-  cta: string;
+  cta?: string;
   ctaSecondary?: { label: string; href: string };
-  href: string;
+  href?: string;
+  items?: string[];
+  note?: string;
   icon: ReactNode;
   primary?: boolean;
 }) {
@@ -418,31 +438,54 @@ function SupportCard({
         {body}
       </p>
 
-      <div className="mt-7 flex flex-wrap items-center gap-3">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${
-            primary
-              ? "bg-background text-foreground hover:bg-background/90"
-              : "bg-foreground text-background hover:bg-foreground/90"
-          }`}
-        >
-          {cta}
-          <ArrowRight className="h-4 w-4" />
-        </a>
-        {ctaSecondary && (
+      {items && (
+        <ul className={`mt-4 space-y-2 text-sm ${primary ? "text-background/85" : "text-foreground"}`}>
+          {items.map((item) => (
+            <li key={item} className="flex items-center gap-2.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {cta && href && (
+        <div className="mt-7 flex flex-wrap items-center gap-3">
           <a
-            href={ctaSecondary.href}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-foreground border border-border hover:border-foreground/40 transition"
+            className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${
+              primary
+                ? "bg-background text-foreground hover:bg-background/90"
+                : "bg-foreground text-background hover:bg-foreground/90"
+            }`}
           >
-            {ctaSecondary.label}
+            {cta}
+            <ArrowRight className="h-4 w-4" />
           </a>
-        )}
-      </div>
+          {ctaSecondary && (
+            <a
+              href={ctaSecondary.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${
+                primary
+                  ? "text-background border border-background/30 hover:border-background/60"
+                  : "text-foreground border border-border hover:border-foreground/40"
+              }`}
+            >
+              {ctaSecondary.label}
+            </a>
+          )}
+        </div>
+      )}
+
+      {note && (
+        <p className={`mt-4 text-sm ${primary ? "text-background/70" : "text-muted-foreground"}`}>
+          {note}
+        </p>
+      )}
     </div>
   );
 }
