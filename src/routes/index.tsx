@@ -86,8 +86,8 @@ function Index() {
       {/* <VideoSection /> */}
       <Collage />
       <Story />
-      <BeyondLimitations />
       <SupportCTA />
+      <BeyondLimitations />
       <SiteFooter />
     </div>
   );
@@ -103,8 +103,8 @@ function SiteHeader() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a> */}
           <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
-          <a href="#limitationsAndCompetition" className="link-underline hover:link-underline-hover hover:text-foreground transition">Beyond Limitations</a>
           <a href="#support" className="link-underline hover:link-underline-hover hover:text-foreground transition">Support</a>
+          <a href="#limitationsAndCompetition" className="link-underline hover:link-underline-hover hover:text-foreground transition">Beyond Limitations</a>
         </nav>
         <a
           href="#support"
@@ -363,49 +363,9 @@ function Story() {
   );
 }
 
-function BeyondLimitations() {
-  return (
-    <section id="BeyondLimitations" className="py-24 sm:py-32 border-y border-border/60">
-      <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
-        <Reveal>
-          <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">Beyond Limitations</p>
-        </Reveal>
-        <Reveal delay={100}>
-          <blockquote className="mt-6 font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight text-foreground">
-            “Born with cerebral palsy. Defined by determination.”
-          </blockquote>
-        </Reveal>
-        <Reveal delay={200}>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            When I first walked into a CrossFit gym, many of the movements seemed impossible.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            I couldn't perform exercises the way other athletes did. My balance, coordination, strength, and mobility were all affected by cerebral palsy. There were moments of frustration and doubt.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            But I kept showing up.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Day after day, workout after workout, I learned how to adapt, improve, and overcome obstacles that once felt out of reach.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            What started as a personal challenge became a passion and eventually led me to compete on one of the biggest stages in adaptive fitness.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Today, I am a two-time Adaptive CrossFit Games qualifier.
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            My journey is proof that progress is possible, even when the starting line looks different.
-          </p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function SupportCTA() {
   return (
-    <section id="support" className="py-24 sm:py-32 bg-surface">
+    <section id="support" className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <Reveal>
           <div className="text-center">
@@ -477,6 +437,46 @@ function SupportCTA() {
               </p>
             </div>
           </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function BeyondLimitations() {
+  return (
+    <section id="BeyondLimitations" className="py-24 sm:py-32 border-y border-border/60 bg-surface">
+      <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">Beyond Limitations</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <blockquote className="mt-6 font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight text-foreground">
+            “Born with cerebral palsy. Defined by determination.”
+          </blockquote>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            When I first walked into a CrossFit gym, many of the movements seemed impossible.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            I couldn't perform exercises the way other athletes did. My balance, coordination, strength, and mobility were all affected by cerebral palsy. There were moments of frustration and doubt.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            But I kept showing up.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Day after day, workout after workout, I learned how to adapt, improve, and overcome obstacles that once felt out of reach.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            What started as a personal challenge became a passion and eventually led me to compete on one of the biggest stages in adaptive fitness.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Today, I am a two-time Adaptive CrossFit Games qualifier.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            My journey is proof that progress is possible, even when the starting line looks different.
+          </p>
         </Reveal>
       </div>
     </section>
