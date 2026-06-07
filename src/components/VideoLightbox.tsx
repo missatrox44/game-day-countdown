@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Play, X } from "lucide-react";
 import posterImg from "@/assets/video-poster.jpg";
 
