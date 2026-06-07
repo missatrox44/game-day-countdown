@@ -10,6 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# This project uses bun (bun.lock) — keep pnpm artifacts out
+pnpm-lock.yaml
+pnpm-workspace.yaml
 .output
 .vinxi
 .tanstack/**
