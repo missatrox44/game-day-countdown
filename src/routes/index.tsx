@@ -377,9 +377,6 @@ function BeyondLimitations() {
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            From Limitations to Competition
-          </p>
-          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
             When I first walked into a CrossFit gym, many of the movements seemed impossible.
           </p>
           <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
