@@ -74,7 +74,7 @@ function Index() {
       <SiteHeader />
       <Hero />
       <MarqueeBar />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <Collage />
       <Story />
       <SupportCTA />
@@ -91,7 +91,7 @@ function SiteHeader() {
           Alexa Serret<span className="text-primary">.</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a>
+          {/* <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a> */}
           <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
           <a href="#support" className="link-underline hover:link-underline-hover hover:text-foreground transition">Support</a>
         </nav>
@@ -249,7 +249,7 @@ function VideoSection() {
 
 function Collage() {
   return (
-    <section className="pb-24 sm:pb-32">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
         <Reveal>
           <div className="mb-10 flex items-end justify-between gap-6">
