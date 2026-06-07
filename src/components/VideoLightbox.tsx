@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Play, X } from "lucide-react";
 import posterImg from "@/assets/overhead.jpg";
 
@@ -19,7 +20,6 @@ export function VideoLightbox() {
       document.body.style.overflow = prev;
     };
   }, [open]);
-
 
   return (
     <>
@@ -48,12 +48,8 @@ export function VideoLightbox() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 flex items-end justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.22em] text-white/70">
-              Watch
-            </p>
-            <p className="font-display text-xl sm:text-2xl text-white">
-              Alexa's story
-            </p>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-white/70">Watch</p>
+            <p className="font-display text-xl sm:text-2xl text-white">Alexa's story</p>
           </div>
           <span className="hidden sm:inline text-xs uppercase tracking-[0.18em] text-white/80">
             2 min
@@ -61,36 +57,38 @@ export function VideoLightbox() {
         </div>
       </button>
 
-      {open && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Video player"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-8 animate-fade-up"
-          onClick={() => setOpen(false)}
-        >
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-white"
-            aria-label="Close video"
-          >
-            <X className="h-5 w-5" />
-          </button>
+      {open &&
+        createPortal(
           <div
-            className="relative w-full max-w-5xl aspect-video overflow-hidden rounded-xl shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Video player"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-8 animate-fade-up"
+            onClick={() => setOpen(false)}
           >
-            <iframe
-              src={VIDEO_URL}
-              title="Alexa — Adaptive CrossFit Games"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="h-full w-full"
-            />
-          </div>
-        </div>
-      )}
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-white"
+              aria-label="Close video"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div
+              className="relative w-full max-w-5xl aspect-video overflow-hidden rounded-xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                src={VIDEO_URL}
+                title="Alexa — Adaptive CrossFit Games"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="h-full w-full"
+              />
+            </div>
+          </div>,
+          document.body,
+        )}
     </>
   );
 }
