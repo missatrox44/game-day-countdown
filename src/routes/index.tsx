@@ -103,7 +103,7 @@ function SiteHeader() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a> */}
           <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
-          <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
+          <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Beyond Limitations</a>
           <a href="#support" className="link-underline hover:link-underline-hover hover:text-foreground transition">Support</a>
         </nav>
         <a
