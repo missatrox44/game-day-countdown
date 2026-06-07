@@ -365,7 +365,7 @@ function Story() {
 
 function BeyondLimitations() {
   return (
-    <section id="BeyondLimitations" className="py-24 sm:py-32 bg-surface border-y border-border/60">
+    <section id="BeyondLimitations" className="py-24 sm:py-32 border-y border-border/60">
       <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">Beyond Limitations</p>
