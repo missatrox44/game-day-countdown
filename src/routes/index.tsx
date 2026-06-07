@@ -405,7 +405,7 @@ function BeyondLimitations() {
 
 function SupportCTA() {
   return (
-    <section id="support" className="py-24 sm:py-32">
+    <section id="support" className="py-24 sm:py-32 bg-surface">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
         <Reveal>
           <div className="text-center">
@@ -596,7 +596,7 @@ function SupportCard({
 
 function SiteFooter() {
   return (
-    <footer className="border-t border-border/60 bg-surface">
+    <footer className="border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div>
           <p className="font-display text-xl font-semibold">Alexa Serret<span className="text-primary">.</span></p>
