@@ -424,9 +424,7 @@ function SupportCTA() {
               <img
                 src={tshirts}
                 alt="T-shirt design of 2026"
-                className="h-full w-full object-cover animate-ken-burns"
-                width={1119}
-                height={573}
+                className="w-full object-cover rounded-3xl"
               />
           </Reveal>
         </div>
