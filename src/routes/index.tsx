@@ -86,6 +86,7 @@ function Index() {
       {/* <VideoSection /> */}
       <Collage />
       <Story />
+      <FromLimitationsToCompetition />
       <SupportCTA />
       <SiteFooter />
     </div>
@@ -330,15 +331,74 @@ function Story() {
         </Reveal>
         <Reveal delay={100}>
           <blockquote className="mt-6 font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight text-foreground">
-            “I'm not here because it was easy. I'm here because I refused to put the
-            bar down.”
+            “I spent years hiding my disability. Today, I use it to inspire others.”
           </blockquote>
         </Reveal>
         <Reveal delay={200}>
           <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Alexa has been putting in the work for years. Late evenings, high standards, and never once backing down from a challenge. This July she steps onto the biggest stage in adaptive CrossFit. All her hard work is paying off! Help her get there with a share, a shirt order or a donation.
+            I was born with congenital cerebral palsy, a neurological condition that affects the left side of my body.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            For me, this means living with muscle weakness, spasticity, reduced mobility, and challenges that influence many everyday movements. Things that most people do without thinking often require extra effort, adaptation, and patience.
+          </p>  
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Growing up, I struggled to accept being different. I was bullied because of my disability, and for many years I felt embarrassed by it. I used to hide my left hand whenever I could, hoping nobody would notice that I was different.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            As a child, all I wanted was to fit in.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Over time, I realized that the very thing I was trying to hide was also the source of my strength. Living with cerebral palsy taught me resilience, determination, and the ability to keep going when things get difficult.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            My disability has shaped who I am, but it has never defined what I can achieve.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Today, I proudly share my story, not because the journey has been easy, but because I hope it helps others see that limitations do not have to determine our future.
           </p>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function FromLimitationsToCompetition() {
+  return (
+    <section id="limitationsAndCompetition" className="py-24 sm:py-32 bg-surface border-y border-border/60">
+      <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">From Limitations to Competition</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <blockquote className="mt-6 font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight text-foreground">
+            “Born with cerebral palsy. Defined by determination.”
+          </blockquote>
+        </Reveal>
+        <Reveal delay={200}>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            From Limitations to Competition
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            When I first walked into a CrossFit gym, many of the movements seemed impossible.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            I couldn't perform exercises the way other athletes did. My balance, coordination, strength, and mobility were all affected by cerebral palsy. There were moments of frustration and doubt.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            But I kept showing up.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Day after day, workout after workout, I learned how to adapt, improve, and overcome obstacles that once felt out of reach.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            What started as a personal challenge became a passion and eventually led me to compete on one of the biggest stages in adaptive fitness.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Today, I am a two-time Adaptive CrossFit Games qualifier.
+          </p>
+          <p className="mt-10 text-base sm:text-lg text-muted-foreground leading-relaxed">
+            My journey is proof that progress is possible, even when the starting line looks different.
+          </p>
       </div>
     </section>
   );
