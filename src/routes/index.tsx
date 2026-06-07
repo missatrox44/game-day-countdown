@@ -86,7 +86,7 @@ function Index() {
       {/* <VideoSection /> */}
       <Collage />
       <Story />
-      <FromLimitationsToCompetition />
+      <BeyondLimitations />
       <SupportCTA />
       <SiteFooter />
     </div>
@@ -102,6 +102,7 @@ function SiteHeader() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           {/* <a href="#video" className="link-underline hover:link-underline-hover hover:text-foreground transition">Video</a> */}
+          <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
           <a href="#story" className="link-underline hover:link-underline-hover hover:text-foreground transition">Story</a>
           <a href="#support" className="link-underline hover:link-underline-hover hover:text-foreground transition">Support</a>
         </nav>
@@ -362,12 +363,12 @@ function Story() {
   );
 }
 
-function FromLimitationsToCompetition() {
+function BeyondLimitations() {
   return (
     <section id="limitationsAndCompetition" className="py-24 sm:py-32 bg-surface border-y border-border/60">
       <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">From Limitations to Competition</p>
+          <p className="text-xs uppercase tracking-[0.28em] text-primary font-medium">Beyond Limitations</p>
         </Reveal>
         <Reveal delay={100}>
           <blockquote className="mt-6 font-display text-3xl sm:text-5xl leading-[1.1] tracking-tight text-foreground">
