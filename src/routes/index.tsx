@@ -440,7 +440,7 @@ function SupportCTA() {
           </div>
         </Reveal>
 
-        <div className="mt-14 sm:mt-5 rounded-3xl flex flex-col sm:flex-row items-center gap-7 sm:gap-9">
+        <div className="mt-14 sm:mt-5 rounded-3xl flex flex-col sm:flex-row items-center gap-7 sm:gap-9 border border-border">
           <Reveal delay={100}>
               <img
                 src={tshirts}
