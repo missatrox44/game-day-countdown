@@ -120,14 +120,14 @@ function Hero() {
             >
               Road to the 2026 Adaptive CrossFit Games
             </p>
-            <h1 className="mt-6 font-display font-semibold tracking-[-0.02em] text-foreground leading-[0.95] text-[3.25rem] sm:text-7xl lg:text-[7.5rem]">
+            <h1 className="mt-6 font-stencil font-black uppercase tracking-[-0.005em] text-foreground leading-[0.9] text-[3.5rem] sm:text-8xl lg:text-[8.5rem]">
               {words.map((w, i) => (
-                <span key={i} className="inline-block overflow-hidden align-baseline mr-[0.18em]">
+                <span key={i} className="inline-block overflow-hidden align-baseline mr-[0.14em]">
                   <span
                     className="inline-block animate-word-rise"
                     style={{ animationDelay: `${150 + i * 80}ms` }}
                   >
-                    {w === "Games." ? <em className="italic text-primary not-italic font-display">Games.</em> : w}
+                    {w === "Games." ? <span className="text-primary font-stencil">Games.</span> : w}
                   </span>
                 </span>
               ))}
